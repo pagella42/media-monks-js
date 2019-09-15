@@ -1,0 +1,110 @@
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+        integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- //landing page -->
+
+    <div id="blur"></div>
+
+    <div id="loginContainer">
+        <div id="loginName">Welcome to the Weather App</div>
+        <div id="loginBar">
+            <input type="text" id="loginInput" placeholder="   Login or input a New User">
+            <button id="loginButton"><i class="fas fa-share"></i></button>
+
+        </div>
+    </div>
+
+    <!-- Weather -->
+    <script id="app-template" type="text/x-handlebars-template">
+        <div id="header">
+
+                <div id="h3">
+                        <div id="greet">Welcome, {{user}}!</div>
+                        {{#if change}}
+                        <button class="temp">°C</button>
+                        {{else}}
+                        <button class="temp">°F</button>
+                        {{/if}}
+                        <button id="logout"><i class="fas fa-sign-out-alt"></i></button>
+                    </div>
+            
+               
+            </div>
+            <div id="h2">
+                <input type="text" id="cityInput" placeholder="   Search for a city">
+            
+            </div>
+            
+                
+            <div id="h1">
+                <div id="addcity">Add a new City</div> <button class = "start"><i class="fas fa-plus-circle bttn"></i></button>
+        
+        
+        </div>
+
+        </script>
+
+    <script id="container-template" type="text/x-handlebars-template">
+
+
+
+    {{#each data}}
+            <div class="cityContainer c{{code}} {{condition}}">
+                    {{#if saved}}
+                    <button class="butt remove" ><i class="fas fa-minus-circle"></i></button>
+                    {{else}}
+                    
+                    <button class="butt save" ><i class="fas fa-plus-circle"></i></button>
+                    {{/if}}
+              
+                <div class="info">
+                    <div class="name">{{name}}</div>
+                    <div class="condition">{{condition}}</div>
+
+                </div>
+                <!-- <div class="updated">{{updatedAt}}</div> -->
+                {{#if ../change}}
+                <div class="temperature">{{farenheit}} °F</div>
+                {{else}}
+                <div class="temperature">{{temperature}} °C</div>
+                {{/if}}
+               
+                <div class="conditionPic">
+                    <img class="pic" src="{{conditionPic}}" >
+                    
+                </div>
+            </div>
+
+{{/each}}
+
+
+ </script>
+
+ 
+    <div id="weatherContainer">
+            <div id="headerCont"></div>
+            <div id="results"></div>
+    </div>
+
+
+    <script src="./handlebars/dist/handlebars.js"></script>
+    <script src="./jquery/dist/jquery.js"></script>
+
+    <script src="renderer.js"></script>
+    <script src="tempManager.js"></script>
+    <script src="main.js"></script>
+
+</body>
+
+</html>

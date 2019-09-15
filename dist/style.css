@@ -1,0 +1,400 @@
+
+body{
+    font-family: 'Nanum Gothic', sans-serif;
+    
+   display: flex;
+   
+
+    justify-content: center; 
+margin: 0px;
+outline: none; 
+    
+}
+
+.fas{
+    cursor: pointer;
+    
+}
+
+/* #header{
+    display: inline;
+} */
+
+#logout:hover{
+    cursor: pointer;
+    color: #011C20
+}
+
+#h2{
+    display: grid;
+    
+    width: 100vw;
+    height: 5vh;
+    font-size: 1.5em;
+    border: 0px;
+    /* background-color: #466362; */
+    
+  
+    
+}
+
+#cityInput{
+    display: grid;
+    justify-self: center;
+    align-self: center;
+   
+    border-radius: 20px;
+    outline: none; 
+    width: 90vw;
+    height: 4vh;
+}
+
+/* #citySend{
+    font-size: 1.5em;
+    color: #011C27;
+} */
+
+#h1{
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    margin: 2px;
+    height: 5vh;
+    font-size: 1.5em;
+}
+.bttn{
+    font-size: 2em;
+}
+.start{
+    color: #011C27;
+}
+#addcity{
+    display: grid;
+    align-content: center;
+    margin-left: 10%;
+}
+
+#h3{
+    display: grid;
+    grid-template-columns: 5fr 1fr 1fr;
+    
+    height: 5vh;
+    font-size: 1.5em;
+    font-family: 'Quicksand', sans-serif;
+    /* background-color: #4A5A59; */
+    background-image:  linear-gradient(to bottom, #4A5A59 50%, #415A59 );
+    color: white;
+}
+
+.temp{
+    font-size: 1.1em;
+    color: #011C27;
+}
+
+#logout{
+    font-size: 1.1em;
+    color: #c0392b;
+}
+
+#greet{
+    display: grid;
+    align-content: center;
+    margin-left: 2%;
+    
+}
+
+
+
+#weatherContainer{
+    
+    
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+
+
+    
+}
+#results{
+    display: flex;
+   
+
+    align-items: center;
+    justify-items: center;
+    flex-direction: column;
+}
+/* city container */
+.cityContainer{
+    display: grid;
+    grid-template-columns: 2fr 4fr 2fr 1fr;
+    grid-template-areas: "a b c d";
+    width: 90vw;
+    height: 10vh;
+    max-height: 10vh;
+    
+        align-items: center;
+        justify-items: center;
+    margin-bottom: 2%;
+    margin-top: 2%;
+
+    background-color: #7D8491;
+    border-radius: 10px;
+    
+    
+
+}
+
+.save{
+    grid-area: d;
+    
+    font-size: 1.5em;
+    color: #011C27;
+}
+.remove{
+    grid-area: d;
+    font-size: 1.5em;
+    color: #011C27;
+}
+.info{
+    grid-area: b;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    align-content: start;
+    height: 100%;
+    width: 100%
+ 
+}
+
+.name{
+    font-size: 1.5em;
+    align-self: center;
+}
+
+
+.temperature{
+grid-area: c;
+font-size: 1.3em;
+}
+
+.conditionPic{
+grid-area: a;
+
+
+}
+
+.pic{
+    display: grid;
+    border-radius: 50%;
+    align-self: center;
+    justify-self: center;
+}
+
+
+/* colors */
+.Sunny{
+    background-color: #8AC6D0;
+    
+}
+
+.Clear{
+    background-color: #3D5A6C;
+}
+
+.c116{
+    background-color: #C7D3DD;
+}
+
+
+@media screen and (min-width: 500px){
+
+    #blur{
+        filter: blur(10px);
+       
+       
+        z-index: 0;
+
+        top: 5%;
+        bottom: 5%;
+        left: 5%;
+        right: 5%;
+        position: absolute;
+        /* background-color: #889696; */
+        background-image: linear-gradient(to left, #466362, #5F7470);
+        opacity: 1;
+        
+    }
+    body{
+        
+        width: 100vw;
+        height: 100vh;
+        /* filter: blur(5px) */
+        background-color: #5F7470;
+     
+    }
+    
+    #loginContainer{
+      
+        opacity: 1;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        align-self: center;
+        justify-self: center; 
+    
+        align-items: center;
+        justify-items: center; 
+    
+        width: 40vw;
+        height: 20vh;
+        grid-gap: 10%;
+        margin-top: 40vh;
+        margin-bottom: 40vh;
+
+        z-index: 1;
+          
+    }
+    
+    
+    
+    #loginBar{
+       
+       font-family: 'Nanum Gothic', sans-serif;
+       display: grid;
+       grid-auto-columns: 8.5fr 1.5fr;
+       grid-template-areas: "a b";
+    
+       
+         grid-gap: 1%;
+        
+        height: 50px;
+        width: 100%;
+    }
+    #loginInput{
+        
+        display: inline-block;
+        grid-area: a;
+        border-radius: 50px;
+        outline: none; 
+      
+    
+    }
+    #loginButton{
+      
+        display: inline-block;
+        justify-self: end;
+        grid-area: b;
+        
+        background-color: #011C27;
+        color: white;
+        border-radius: 50px;
+        width: 90%;
+        border: 0px;
+        font-size: 1.5em;
+        outline: none; 
+    }
+    
+    #loginName{
+        font-size: 2em;
+        font-family: 'Nanum Gothic', sans-serif;
+        color: #ffffff;
+ 
+    }
+}
+
+
+/* FOR PHONES!!!! */
+
+
+@media screen and (max-width: 500px){
+
+    #blur{
+        filter: blur(25px);
+       
+       
+        z-index: 0;
+        top: 5%;
+        bottom: 5%;
+        left: 7%;
+        right: 7%;
+        position: absolute;
+        background-image: linear-gradient(to left, #466362 10%, #5F7470 10%, #466362 10%);
+        opacity: 1;
+        
+    }
+    body{
+        
+        width: 100vw;
+        height: 100vh;
+        
+        /* filter: blur(5px) */
+        background-color: #5F7470;
+     
+    }
+    
+    #loginContainer{
+        align-self: center;
+        /* justify-self: center;  */
+      
+        opacity: 1;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+    
+        align-items: center;
+        justify-items: center; 
+    
+        width: 80vw;
+        height: 10vh;
+        grid-gap: 5%;
+
+        /* margin-top: 45vh; */
+
+        z-index: 1;
+      
+          
+    }
+    
+    
+    
+    #loginBar{
+       
+       font-family: 'Nanum Gothic', sans-serif;
+       display: grid;
+       grid-auto-columns: 8.5fr 1.5fr;
+       grid-template-areas: "a b";
+    
+       
+         grid-gap: 1%;
+        
+        height: 100%;
+        width: 100%;
+    }
+    #loginInput{
+        
+        display: inline-block;
+        grid-area: a;
+        border-radius: 50px;
+        outline: none; 
+      
+    
+    }
+    #loginButton{
+      
+        display: inline-block;
+        justify-self: end;
+        grid-area: b;
+        
+        background-color: #011C27;
+        color: white;
+        border-radius: 50px;
+        width: 100%;
+        border: 0px;
+        font-size: 1.5em;
+        outline: none; 
+    }
+    
+    #loginName{
+        font-size: 1.3em;
+        font-family: 'Nanum Gothic', sans-serif;
+        color: #ffffff;
+        
+        
+    }
+}
