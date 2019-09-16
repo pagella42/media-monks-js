@@ -34,9 +34,9 @@
                 <div id="h3">
                         <div id="greet">Welcome, {{user}}!</div>
                         
-                        <button class="temp">°C/°F</button>
+                        <button class="temp trans">°C/°F</button>
                       
-                        <button id="logout"><i class="fas fa-sign-out-alt"></i></button>
+                        <button id="logout trans"><i class="fas fa-sign-out-alt"></i></button>
                     </div>
             
                
@@ -48,7 +48,7 @@
             
                 
             <div id="h1">
-                <div id="addcity">Add a new City</div> <button class = "start"><i class="fas fa-plus-circle bttn"></i></button>
+                <div id="addcity">Add a new City</div> <button class = "start trans"><i class="fas fa-plus-circle bttn"></i></button>
         
         
         </div>
@@ -89,10 +89,10 @@
     {{#each data}}
             <div class="cityContainer c{{code}} {{condition}}">
                     {{#if saved}}
-                    <button class="butt remove" ><i class="fas fa-minus-circle"></i></button>
+                    <button class="butt remove trans" ><i class="fas fa-minus-circle"></i></button>
                     {{else}}
                     
-                    <button class="butt save" ><i class="fas fa-plus-circle"></i></button>
+                    <button class="butt save trans" ><i class="fas fa-plus-circle"></i></button>
                     {{/if}}
               
                 <div class="info">
