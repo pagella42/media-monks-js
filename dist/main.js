@@ -5,11 +5,14 @@ const renderer = new Renderer()
 
 
 
-//                              //render app? // reload results?
-const loadPage = async function (renderapp, reloadresults) {
+//                              //render app? // reload results? //render loc
+const loadPage = async function (renderapp, reloadresults, renderloc) {
     await manager.getDataFromDB()
     let data = manager.cityData
 
+    if(renderloc){
+        manager.location()
+    }
     if(reloadresults){
 
         $("#results").fadeOut(400)
@@ -21,6 +24,8 @@ const loadPage = async function (renderapp, reloadresults) {
     else{
         renderer.renderData(data)
     }
+
+    
 
     if (renderapp) {
         renderer.renderApp(data)
@@ -37,7 +42,7 @@ const hideLogin = function () {
 
     $("#loginContainer").fadeOut(-5)
     setTimeout(async () => {
-        await loadPage(true)
+        await loadPage(true, true, true)
         $("#weatherContainer").css('width', '100%')
         $("#weatherContainer").css('height', '100%')
     }, 400);
@@ -46,6 +51,7 @@ const hideLogin = function () {
         let user = $('#loginInput').val().replace(/(^.)/, c => c.toUpperCase())
         localStorage.setItem('user', `${user}`)
         localStorage.setItem('farenheit', false)
+        
     }
 
 }
@@ -111,7 +117,7 @@ $("body").on("click", ".save", async function () {
     let city = $(this).closest('.cityContainer').find(".name").html()
 
     await manager.saveCity(city)
-    await loadPage(false, true)
+    await loadPage(false, true, false)
 
 
 
@@ -137,7 +143,7 @@ $("body").on("click", ".temp", async function () {
     let data = JSON.parse(localStorage.farenheit)
     localStorage.farenheit = !data
 
-    await loadPage()
+    await loadPage(false, false, true)
 })
 
 $("body").on("click", "#logout", function () {
@@ -150,9 +156,12 @@ $("body").on("click", "#logout", function () {
 
 // login screen
 $("#loginButton").click(function () {
+
     let value = $("#loginInput").val()
     if(value){
-
-        hideLogin()
+        
+     hideLogin()
+         
     }
 })
+

@@ -10,6 +10,74 @@ margin: 0px;
 outline: none; 
     
 }
+#location{
+    display: grid;
+    
+    font-family: 'Montserrat', sans-serif;
+    /* justify-content: center; */
+    /* align-content: center; */
+    justify-items: center;
+    align-items: center;
+}
+.loclogo{
+    color: #113537;
+}
+#myloc{
+    display: grid;
+    border-radius: 10px;
+
+ 
+
+    grid-template-columns: 3fr 1fr;
+    width: 90vw;
+    height: 10vh;
+       background-color: #7D8491;
+       grid-template-areas: "a b";
+       margin-bottom: 2px;
+       
+       
+}
+#loccont{
+      grid-area: a;
+    display: grid;
+  
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "j" "k";
+    align-items: center;
+}
+#locpic{
+    grid-area: b;
+    display: grid;
+  
+}
+.locpic{
+    display: grid;
+    justify-self: center;
+    align-self: center;
+}
+ #locname{
+grid-area: j;
+/* display: grid;
+    align-content: center; */
+    margin-left: 5%;
+}
+
+#locinfo{
+    grid-area: k;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: "o p";
+    margin-left: 13%;
+
+}
+
+#loccond{
+grid-area: o;
+}
+#loctemp{
+    grid-area: p;
+}
 
 .fas{
     cursor: pointer;
@@ -75,10 +143,10 @@ outline: none;
 
 #h3{
     display: grid;
-    grid-template-columns: 5fr 1fr 1fr;
+    grid-template-columns: 5fr 2fr 1fr;
     
     height: 5vh;
-    font-size: 1.5em;
+    font-size: 1.4em;
     font-family: 'Quicksand', sans-serif;
     /* background-color: #4A5A59; */
     background-image:  linear-gradient(to bottom, #4A5A59 50%, #415A59 );
@@ -86,7 +154,7 @@ outline: none;
 }
 
 .temp{
-    font-size: 1.1em;
+    font-size: 1em;
     color: #011C27;
 }
 
@@ -99,6 +167,7 @@ outline: none;
     display: grid;
     align-content: center;
     margin-left: 2%;
+    
     
 }
 
@@ -129,7 +198,7 @@ outline: none;
     grid-template-areas: "a b c d";
     width: 90vw;
     height: 10vh;
-    max-height: 10vh;
+    max-height: 13vh;
     
         align-items: center;
         justify-items: center;
@@ -165,7 +234,7 @@ outline: none;
 }
 
 .name{
-    font-size: 1.5em;
+    font-size: 1.4em;
     align-self: center;
 }
 

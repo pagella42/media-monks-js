@@ -29,6 +29,10 @@ class Renderer{
 
 renderApp(data){
 
+    // const locmanager = new TempManager()
+    // let myloc = locmanager.location()
+
+
     let user = localStorage.user
     let change = JSON.parse(localStorage.farenheit)
     let finaldata = {data: data, user: user, change: change}
@@ -40,5 +44,15 @@ renderApp(data){
     $("#headerCont").append(content)
 
     $("#h2").hide()
+}
+
+renderLoc(data){
+    let change = JSON.parse(localStorage.farenheit)
+    let finaldata = {data: data, change: change}
+    $("#location").empty()
+    const source = $('#loc-template').html();
+    const template = Handlebars.compile(source)
+    let content = template(finaldata)
+    $("#location").append(content)
 }
 }
