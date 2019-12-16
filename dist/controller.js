@@ -62,6 +62,7 @@ class Controller {
         //scroll by pixels
         if (forward) {
             this.page == 7 ? calc = 0 : null
+            this.page == 8 ? calc = width : null
 
             this.page += 1
             event.preventDefault();
