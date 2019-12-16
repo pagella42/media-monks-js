@@ -1,3 +1,25 @@
+@media only screen and (min-width: 700px) {
+  #loader-inner{
+    grid-template-rows: 1fr, 0.2fr;
+  
+  }
+}
+@media only screen and (max-width: 700px) {
+  #loader-inner{
+     margin-top: 20vh;
+  }
+  #loader-text{
+     padding: 10%;
+  }
+
+  #loader-inner{
+    grid-template-rows: 1fr, 1fr;
+    grid-gap: 20%;
+
+  }
+}
+
+
 #loader-container{
     width: 100vw;
     height: 100vh;
@@ -28,7 +50,6 @@
 #loader-inner{
     position: fixed;
     display: grid;
-    grid-template-rows: 1fr, 0.2fr;
     width: 20vw;
     height: 15vh;
     top: 50%;
