@@ -7,7 +7,7 @@ window.onload = function () {
 
     setTimeout(() => {
         document.getElementById("loader-container").className = "hide"
-    }, 7000);
+    }, 1000);
 };
 
 //arrow buttons 

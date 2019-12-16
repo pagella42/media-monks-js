@@ -18,20 +18,20 @@ class Controller {
         }
 
         //hide arrows when on first or last page
-        if(this.page == 0){
-            document.getElementById(`left`).className = "hide"
-            document.getElementById(`paginator-detail`).className = "hide"
-            
-        }
-        else if(this.page == 9){
-            document.getElementById(`right`).className = "hide"
-            document.getElementById(`paginator-detail`).className = "hide"
-        }
-        else{
+
+        if(this.page > 0 && this.page < 9){
             document.getElementById(`right`).className = "fas fa-chevron-right"
             document.getElementById(`left`).className = "fas fa-chevron-left"
             document.getElementById(`paginator-detail`).className = ""
         }
+        else{
+            let arrow = ""
+            this.page == 0 ? arrow = "left" : arrow = "right"
+            document.getElementById(`${arrow}`).className = "hide"
+            document.getElementById(`paginator-detail`).className = "hide"
+        }
+       
+        
     }
 
 
