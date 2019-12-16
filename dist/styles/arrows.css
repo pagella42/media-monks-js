@@ -1,0 +1,19 @@
+#right{
+    position: fixed;
+    top: 50%;
+    right: 3%;
+    transform: translate(0%, -50%);
+    color: white;
+    font-size: 3em;
+    
+}
+
+#left{
+    position: fixed;
+    top: 50%;
+    left: 3%;
+    transform: translate(0%, -50%);
+    color: white;
+    font-size: 3em;
+    
+}
