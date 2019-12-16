@@ -7,31 +7,32 @@ class Controller {
     // updates the render of the pagination bar
     updatePaginator(previous) {
         //render white square on actual page
+        let pagNum = document.getElementById(`pag-num-${this.page}`)
+
         if (previous) {
-           this.page > 0 && this.page < 9 ? document.getElementById(`pag-num-${this.page}`).innerHTML = this.page : document.getElementById(`pag-num-${this.page}`).innerHTML = "&ensp;"
-            document.getElementById(`pag-num-${this.page}`).className = "pag-num"
+            this.page > 0 && this.page < 9 ? pagNum.innerHTML = this.page : pagNum.innerHTML = "&ensp;"
+            pagNum.className = "pag-num"
         }
         else {
             document.getElementById("paginator-detail-number").innerHTML = this.page
-            document.getElementById(`pag-num-${this.page}`).className = "pag-sq"
-            document.getElementById(`pag-num-${this.page}`).innerHTML = ""
+            pagNum.className = "pag-sq"
+            pagNum.innerHTML = ""
         }
 
         //hide arrows when on first or last page
-
-        if(this.page > 0 && this.page < 9){
+        if (this.page > 0 && this.page < 9) {
             document.getElementById(`right`).className = "fas fa-chevron-right"
             document.getElementById(`left`).className = "fas fa-chevron-left"
             document.getElementById(`paginator-detail`).className = ""
         }
-        else{
+        else {
             let arrow = ""
             this.page == 0 ? arrow = "left" : arrow = "right"
             document.getElementById(`${arrow}`).className = "hide"
             document.getElementById(`paginator-detail`).className = "hide"
         }
-       
-        
+
+
     }
 
 
@@ -50,7 +51,7 @@ class Controller {
 
         this.updatePaginator(true)
 
-        //change text displayed
+        //take out text displayed
         this.page < 9 ? this.showText(false) : null
 
         //calculate width
@@ -74,16 +75,17 @@ class Controller {
             document.getElementById('background-cont').scrollLeft -= calc
         }
 
+        //render the text
         this.page < 9 ? this.showText(true) : null
         this.updatePaginator()
 
-        //recursion
-       if(destinationPage !== undefined && destinationPage !== this.page ){
-           return this.scroll(forward, destinationPage)
-       }
-       else{
-           return
-       }
+        //recursion for scrolling multiple pages
+        if (destinationPage !== undefined && destinationPage !== this.page) {
+            return this.scroll(forward, destinationPage)
+        }
+        else {
+            return
+        }
 
 
     }
