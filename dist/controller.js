@@ -6,6 +6,7 @@ class Controller {
 
     // updates the render of the pagination bar
     updatePaginator(previous) {
+        //render white square on actual page
         if (previous) {
            this.page > 0 && this.page < 9 ? document.getElementById(`pag-num-${this.page}`).innerHTML = this.page : document.getElementById(`pag-num-${this.page}`).innerHTML = "&ensp;"
             document.getElementById(`pag-num-${this.page}`).className = "pag-num"
@@ -16,7 +17,7 @@ class Controller {
             document.getElementById(`pag-num-${this.page}`).innerHTML = ""
         }
 
-          
+        //hide arrows when on first or last page
         if(this.page == 0){
             document.getElementById(`left`).className = "hide"
             document.getElementById(`paginator-detail`).className = "hide"
